@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>從氏軒 - AU114011146</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--muted:#6b7280;--accent:#0ea5a4}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans TC",Helvetica,Arial;line-height:1.5;color:#0f172a;background:var(--bg);padding:24px}
+    .container{max-width:900px;margin:0 auto}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.08);overflow:hidden}
+    header{display:flex;gap:20px;padding:28px}
+    .avatar{width:110px;height:110px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:28px}
+    .meta{flex:1}
+    h1{margin:0;font-size:22px}
+    .id{margin-top:6px;color:var(--muted);font-size:14px}
+    .contact{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+    .pill{background:#eef2f7;padding:6px 10px;border-radius:999px;font-size:13px;color:#0f172a}
+    main{display:grid;grid-template-columns:1fr 340px;gap:20px;padding:24px}
+    .section{margin-bottom:18px}
+    .section h2{font-size:16px;margin:0 0 10px 0}
+    .section p{margin:0;color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:#f1f5f9;padding:6px 10px;border-radius:8px;font-size:13px}
+    .exp{border-left:3px solid #e6eef6;padding:10px 14px;border-radius:6px;background:#fcfeff}
+    footer{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-top:1px solid #eef2f7}
+    .btn{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;border:0;cursor:pointer}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(14,165,164,0.14)}
+    pre{white-space:pre-wrap;font-family:inherit}
+    @media (max-width:880px){main{grid-template-columns:1fr}header{flex-direction:row} .avatar{width:88px;height:88px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <header>
+        <div class="avatar">AU<br/>1140</div>
+        <div class="meta">
+          <h1>從氏軒</h1>
+          <div class="id">學號：AU114011146</div>
+          <div class="contact">
+            <div class="pill">電子郵件：youremail@gmail.com</div>
+            <div class="pill">電話：+886 9xx-xxx-xxx</div>
+            <div class="pill">地址：台灣</div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section>
+          <div class="section">
+            <h2>個人簡介</h2>
+            <p>一段 1–2 句的個人介紹：專注於前端/後端/資料分析/設計等。簡潔說明你的強項與求職目標。</p>
+          </div>
+
+          <div class="section">
+            <h2>工作/專案經驗</h2>
+            <div class="exp">
+              <strong>專案名稱或職稱 — 公司 / 學校</strong>
+              <div style="font-size:13px;color:var(--muted);margin:6px 0">2024/06 — 2025/03</div>
+              <p>用 1–2 行描述這個專案或職務內容，突顯成就或成果（數字化敘述最佳）。</p>
+            </div>
+
+            <div class="exp" style="margin-top:10px">
+              <strong>專案 / 實習 2 — 單位</strong>
+              <div style="font-size:13px;color:var(--muted);margin:6px 0">2023/09 — 2024/05</div>
+              <p>簡述你在其中扮演的角色與主要貢獻。</p>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>教育</h2>
+            <p><strong>學校名稱</strong> — 主修科系<br/>預期畢業：2026</p>
+          </div>
+
+        </section>
+
+        <aside>
+          <div class="section">
+            <h2>技能</h2>
+            <div class="skills">
+              <div class="skill">HTML</div>
+              <div class="skill">CSS</div>
+              <div class="skill">JavaScript</div>
+              <div class="skill">React (可選)</div>
+              <div class="skill">Git</div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>語言</h2>
+            <p>中文（母語）／英文（中等）</p>
+          </div>
+
+          <div class="section">
+            <h2>連結</h2>
+            <p>GitHub：github.com/yourname<br/>作品集：yourportfolio.example.com</p>
+          </div>
+        </aside>
+      </main>
+
+      <footer>
+        <div style="font-size:13px;color:var(--muted)">最後更新：<span id="updated">2025-10-30</span></div>
+        <div>
+          <button class="btn" id="printBtn">列印 / 另存為 PDF</button>
+          <button class="btn secondary" id="themeBtn">切換深色主題</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // 列印功能
+    document.getElementById('printBtn').addEventListener('click',function(){window.print();});
+
+    // 簡單深色主題切換
+    const themeBtn = document.getElementById('themeBtn');
+    let dark = false;
+    themeBtn.addEventListener('click', ()=>{
+      dark = !dark;
+      if(dark){
+        document.documentElement.style.setProperty('--bg','#0b1220');
+        document.documentElement.style.setProperty('--card','#071024');
+        document.documentElement.style.setProperty('--muted','#9aa4b2');
+        document.documentElement.style.setProperty('--accent','#06b6d4');
+      } else {
+        document.documentElement.style.setProperty('--bg','#f6f8fb');
+        document.documentElement.style.setProperty('--card','#ffffff');
+        document.documentElement.style.setProperty('--muted','#6b7280');
+        document.documentElement.style.setProperty('--accent','#0ea5a4');
+      }
+    });
+
+    // 自動把學號插入頁面（如果需要在多處顯示）
+    (function(){
+      const idNodes = document.querySelectorAll('.id');
+      idNodes.forEach(n=>{ if(n.textContent.indexOf('AU114011146')===-1) n.textContent = '學號：AU114011146'; });
+    })();
+  </script>
+</body>
+</html>
